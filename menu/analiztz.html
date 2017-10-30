@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Protector</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" href="../fonts/font.css">
+	<link href="../image/icon2.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+ 	<div id="header">
+ 		<div class="logo"><a href="../index.html"  name="logo" title="Головна"><img src="../image/logoweb.png" class="logoimg"></a></div>
+ 		<div id="menu">
+ 			<ul>
+ 			    <li><a href="analiztz.html">Аналіз ТЗ</a>
+                     <ul class="drop1">
+                     	<li><a href="#work_with_the_device">Порядок роботи</a></li>
+                     	<li><a href="#work_with_android">З Android програмою</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="elementbase.html">Елементна база</a>
+                     <ul class="drop1">
+                     	<li><a href="elementbase.html">Arduino</a></li>
+                     	<li><a href="elementbase.html#displa">Дисплей</a></li>
+                     	<li><a href="elementbase.html#keyboard">Клавіатура</a></li>
+                     	<li><a href="elementbase.html#wifi">WI-FI модуль</a></li>
+                     	<li><a href="elementbase.html#rele">Модуль реле</a></li>
+                     	<li><a href="elementbase.html#zumer">Зуммер модуль</a></li>
+                     	<li><a href="elementbase.html#bluetooth">Bluetooth модуль</a></li>
+                     	<li><a href="elementbase.html#functionshema">Функціональна схема</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="android.html">Android програма</a>
+                     <ul class="drop1">
+                     	<li><a href="android.html">Скачати</a></li>
+                     	<li><a href="android.html#appinventor">App Inventor </a></li>
+                     	<li><a href="android.html#androidcode">Код програми</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="algorithm.html">Алгоритми</a>
+ 			         <ul class="drop1">
+                     	<li><a href="algorithm.html#algorithm_arduino">Алгоритм для Arduino</a></li>
+                     	<li><a href="algorithm.html#blockshema">Блок схема для Arduino</a></li>
+                     	<li><a href="algorithm.html#algorithm_wifi">Алгоритм для WI-FI модуля</a></li>
+                     </ul>
+                </li>
+ 			    <li><a href="addition.html">Додатки</a>
+                     <ul class="drop1">
+                     	<li><a href="addition.html">Програма для Arduinoo</a></li>
+                     	<li><a href="addition.html">Програма для WI-FI модуля</a></li>
+                     </ul>
+ 			    </li>
+ 		    </ul>
+ 	   </div>
+ 	   <div class="right">
+	   <span class="contact"><a href="../sign_up.html" title="Зареєструватися">Реєстрація</a></span>
+	   <span class="contact"><a href="../log_in.html" title="Війти">Вхід</a></span>
+	   </div>
+
+ 	</div>
+    <div id="content">
+        <div id="wrapper">
+            <center><h1>АНАЛІЗ ТЕХНІЧНОГО ЗАВДАННЯ</h1></center>
+            <br>
+        	<p>Щоб відкрити замок потрібно ввести пароль. Пароль можна ввести за допомогою клавіатури або  Android додатку «Home Protector» (див.рис.2.6, 2.7) на який приходить повідомлення коли замок був відкритий «Door has been opened»,  або заблокований «Door has been blocked». Дисплей відображає інформацію про стан замка: «Please enter pin» (див.рис.2.2) - очікування введення паролю, «success» (див.рис.2.3)  -  при вводі правильного паролю, «Wrong» (див.рис.2.4)  -  при вводі неправильного паролю, «police» (див.рис.2.5)  - зображення дисплея коли замок заблокований (для відлякування злодія), коли замок заблокований він не реагує на будь які натискання на клавіатурі, і замок можна розблокувати тільки з Android додатку. Зуммер дає звукове сповіщення коли замок відкривається або блокується.</p>
+            <p>Елементи системи та їх призначення (див.рис.2.1):
+                <ul>
+                    <li>Апаратна обчислювальна платформа Arduino - для зчитування, обробки і надсилання даних.</li>
+                    <li>Клавіатура – для вводу паролю.</li>
+                    <li>Дисплей – для відображення інформації про стан замка (для встановлення зв’язку між системою і користувачем).</li>
+                    <li>Зуммер – для звукового сповіщення про факт відкриття замка, і як сигналізація.</li>
+                    <li>Реле – для відкривання, закривання електромагнітного замка.</li>
+                    <li>Bluetooth модуль – для створення радіо каналу з Android пристроєм.</li>
+                    <li>WI-FI модуль – для створення Web-сервера, через який відбувається обмін даних між Android пристроєм і Arduino.</li>
+                </ul>
+            </p> 
+            <center><img class="blockshema" src="../image/blockshema.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.1 – Блок схема кодового замка</span></center>
+            <br>
+            <p>Для того щоб відкрити двері у будинок потрібно ввести 4-значний пароль з клавіатури яка розташована біля дверей, або ж відкрити їх за допомогою мобільного додатку на Андроід, який дозволяє відкривати двері  через Web-сервер Wi-Fi або Bluetooth.</p>
+            <p>Коли  двері відчиняються на додаток приходить повідомлення що двері були відкриті.</p>
+            <p>Якщо хтось намагатиметься відкрити  двері методом вгадування паролю у нього це не вийде, тому що якщо ввести пароль  5 разів не правильно  то замок блокується, і зуммер дає звук для відлякування грабіжника, також на додаток приходить повідомлення про те що замок був заблокований, і власник  зможе викликати поліцію якщо це потрібно.</p>
+            <p>Для того щоб розблокувати замок потрібно нажати в додатку на кнопку: «Розблокувати»(див.рис.2.6, 2.7). Паролем є «1234».</p>
+            <br>
+            <center><h2 id="work_with_the_device">Порядок роботи з пристроєм</h2></center>
+            <br>
+            <p>1. Для  увімкнення системи потрібно підключити Ардуіно до живлення.</p>
+            <p>2. При запуску системи на LCD-Дисплеї буде відображатися «Please enter pin» (див.рис. 2.2) - очікування введення паролю.
+            </p>
+            <center><img class="text_on_display" src="../image/please_enter_pin.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.2 - Зображення дисплея при старті програми</span></center>
+            <br>
+            <p>3. Введення паролю з клавіатури або Android додатку.</p>
+            <p>Якщо пароль правильний -  то замок відчиняється,  і на LCD-дисплеї буде надпис «success»(див.рис. 2.3), зуммер дасть звук на 1.5 секунди,  в додаток телефона прийде повідомлення про те що двері були відчинені,  після 3-х секунд замок  зачиняється, і надпис на дисплеї   вертається на «Please enter pin».</p>
+            <center><img class="text_on_display" src="../image/success.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.3 – Зображення дисплея при вводі правильного паролю
+            </span></center>
+            <br>
+            <p>4.Якщо пароль ввели неправильно, на 3 секунди надпис на дисплеї стає «Wrong»(див.рис.2.4), і повертається на  «Please enter pin».</p>
+            <center><img class="text_on_display" src="../image/wrong.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.4 – Зображення дисплея при вводі неправильного паролю
+            </span></center>
+            <br>
+            <p>Якщо ввести пароль 5 разів підряд неправильно – то зуммер дасть звукове сповіщення, і  на дисплеї пише «police»(див.рис.2.5) щоб відлякати злодія,  замок блокується, і на додаток Android  приходить повідомлення про те  що  замок заблокований,  щоб повернути його в  1-ше положення («Please enter pin») потрібно натиснути в додатку на кнопку «Pозблокувати» (див.рис.2.6, 2.7)</p>
+            <center><img class="text_on_display" src="../image/police.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.5 – Зображення на дисплеї для відлякування злодія
+            </span></center>
+            <br>
+            <center id="work_with_android" ><h2>Порядок роботи з Android програмою</h2></center>
+            <br>
+            <p>Також замком можна керувати за допомогою Android-пристрою, через Web-сервер Wi-Fi або Bluetooth. Для цього потрібно установити  додаток який називається «HomeProtector». Інтерфейс Android-додатку  зображено на рисунках 2.6, 2.7.</p>
+            <center><img class="interface_of_android" src="../image/interface_home_protector.jpg"><img class="interface_of_android" src="../image/elements_wi-fi.jpg"></center>
+            <center><span class="rysunokn">Рисунок 2.6 – Інтерфейс андроїд&#8195;&#8195;&#8195;Рисунок 2.7 – Інтерфейс андроїд<br>додатку «Екран1»&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;додатку «Екран 2»</span></center>
+            <br>
+            <p>«Екран 1» – призначений для встановлення зв’язку між замком і додатком через Bluetooth:</p>
+            <p>«Елемент 1» – містить в собі поле для повідомлення(Door has been blocked), і кнопку «Розблокувати» – при настискані замок розблоковується.</p>
+            <p>«Елемент 2» – містить в собі поле для вводу паролю, і кнопку «Відкрити» – при натискані відправляється пароль який ввели в поле на Android додатку. </p>
+            <p>«Елемент 3» – містить в собі повідомлення про відкривання дверей(Door has been opened).</p>
+            <p>«Елемент 4» –  в елементі 4 потрібно вибрати імя адресу Bluetooth пристрій (цей пункт потрібно виконати в першу чергу для керування замком через Bluetooth).</p>
+            <p>«Елемент 5» - відображає стан підключення до Bluetooth модуля (No Connect/Connected).</p>
+            <p>«Елемент 6» – відкриває  «Екран 2» (див.рис.2.7):</p>
+            <p>«Екран 2» - для встановлення зв’язку з замком через Web-сервер Wi-Fi.
+            </p>
+            <p>В «Елемент 1» потрібно ввести IP адресу сервера і натиснути на кнопку «ОК».</p>
+            <p>«Елемент 2» – містить в собі поле для повідомлення(Door has been blocked),  і кнопку «Розблокувати» – при натискані замок розблоковується.</p>
+            <p>«Елемент 3» – містить в собі поле для вводу паролю і кнопку «Відкрити» - при натискані відправляється пароль який ввели в поле на Android додатку.</p>
+            <p>«Елемент 4» – містить в собі повідомлення про відкривання дверей(Door has been opened). </p>
+            <p>«Елемент 5» – при натискані відкривається «Екран 1».</p>
+        </div>
+ 	</div>
+ 	<div id="footer">
+ 	    <div id="contacts"><h2>&nbsp;&nbsp;&nbsp;&nbsp;Контакти<hr></h2>
+           <a href="https://www.facebook.com/zubykandriy" target="blank"><img src="../image/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="../image/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a>
+        </div>
+        <div id="other"><h2>&nbsp;&nbsp;&nbsp;&nbsp;Інакше<hr></h2>
+           <a href="http://appinventor.mit.edu/explore/" target="blank"><img src="../image/AppInventorlogo2.png" class="logo_of_other" alt="Appinventor" title="Appinventor"></a>
+           <a href="https://www.arduino.cc/" target="blank"><img src="../image/Arduinoicon2.png" class="logo_of_other" alt="Arduino" title="Arduino"></a>
+        </div>
+        <div id="signature"><p>Зубик Андрій &copy; 2017<br><span class="hp"> <img src="../image/icon2.ico"> Home protector</span></p></div>
+ 	</div>
+ </div>
+</body>
+</html>

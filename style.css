@@ -1,0 +1,383 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*start main css code*/
+html, body {
+	height: 100%;
+}
+body {
+	background-image: url(image/wallpaper2.jpg);
+	background-size:  100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#site{
+	width: 1100px;
+	max-width: 100%;
+	min-width: 805px;
+    height: 100%;
+	margin: 0px auto;
+	position: relative;
+}
+#header{
+	float: left;
+	background-color:  rgba(28,22,22,0.9);
+	width: 100%;
+	height: 130px;
+	border-radius: 0px 0px 10px 10px; 
+}
+#header .logo {
+	float: left;
+	width: 280px;
+}
+#header .logoimg {
+    width: 250px;
+    height: 110px;
+	max-width: 100%;
+	margin: 10px 10px 10px 20px; 
+}
+#header #menu{
+	position: absolute;
+	left: 300px;
+	top: 80px;
+}
+#header #menu ul li{    
+    float: left;
+	position: relative;
+	margin-right: 2px;
+}
+#header #menu ul li a{
+	color: #fff;
+	padding: 0px 7px;
+	height: 32px;
+	line-height: 32px;
+	display: block;
+	border-radius: 5px;
+	background-color: #8C46E7;
+	text-decoration: none;
+	font-family: "vodafone", sans-serif;
+	font-size: 15.5px;
+	margin: 2px;
+}
+#header #menu ul li a:hover{
+	background-color: #6E37B6;
+	border: 2px solid #6E37B6;
+	margin: 0px;
+}
+#menu .drop1 {
+	position: absolute;
+    z-index: 2;
+    top:  100%;
+    left: -5px;
+    width: 190px;
+    display: none;
+    background-color:  rgba(28,22,22,0.7);
+    border-radius: 6px;
+    border-top: none;
+    padding: 1px 5px 5px 5px;
+}
+#menu li:hover .drop1{
+	display: block;
+}
+#header #menu .drop1 li{
+	padding: 0px;
+	margin: 2px 0px 0px 0px;
+	clear: left;
+}
+.right {
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+.right .contact {
+	font-size: 14px;
+	font-family: "vodafone", sans-serif;
+}
+.right .contact a{
+	padding: 7px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #8C46E7;
+	text-decoration: none;
+	margin: 2px;
+}
+.right .contact a:hover{
+	background-color: #6E37B6;
+	border: 2px solid #6E37B6;
+	margin: 0px;
+}
+/*content*/
+#content {	
+  width: 100%;
+  margin: 10px 0px;
+  float: left;
+  background-color:  rgba(28,22,22,0.8);
+  border-radius: 10px;
+  min-height: calc(100% - 280px);
+}
+
+#wrapper{
+	width: 700px;
+    padding: 20px 30px;   
+    margin: 1% auto;
+    color: #fff;
+    border-radius: 5px;
+    background-color:  rgba(28,22,22,0.6);
+    font-family: "vodafone" , sans-serif;
+}
+#wrapper p{
+	text-indent: 30px;
+    text-align: justify;
+    line-height: 20px;
+}
+#wrapper h1{
+	font-size: 20px;
+	font-weight: bold;
+}
+#wrapper h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+#wrapper h3 {
+    font-weight: bold;
+    font-size: 17px;
+    text-indent: 30px;
+}
+#wrapper .poster img{
+	width: 400px;
+	height: 266px;
+	border-radius: 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;	
+}
+#wrapper .rysunokn{
+	line-height: 20px;
+}
+#wrapper img {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	max-width: 100%;
+}
+/*Стилі для аналізу тз*/
+#wrapper  ul {
+	margin-left: 30px;
+	line-height: 20px;
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+#wrapper .blockshema{
+	width: 500px;
+	height: 500px;
+	border-radius: 5px;
+}
+#wrapper .text_on_display {
+	width: 300px;
+	height: 80px;
+}
+#wrapper .interface_of_android{
+	width: 250px;
+	height: 314px;
+	margin-left: 30px;
+}
+/*Стилі для Елементної бази*/
+.img_n1{
+	width: 290px;
+}
+.img_n2{
+	width: 620px;
+}
+.img_n3{
+	width: 180px;
+	height: 270px;
+}
+.img_n4{
+	width: 300px;
+	height: 125px;
+	margin-left: 30px;
+}
+.img_n5{
+	width: 170px;
+}
+.img_n6{
+	width: 300px;
+}
+.img_n7{
+	width: 200px;
+	height: 180px;
+}
+.img_n8{
+	width: 200px;
+}
+.download {
+	color: #8C46E7;
+	font-style: italic;
+	text-decoration: none;
+	border-bottom: 1px dashed #8C46E7;
+	padding-bottom: 1px;
+
+}
+.download:hover {
+	color: #8141D6;
+	font-style: italic;
+	text-decoration: none;
+	border-bottom: 1px solid #8141D6;
+	padding-bottom: 1px;
+
+}
+/*styles for forms*/
+#wrapper form{
+ width: 60%;
+ margin-left: 40%;
+}
+#wrapper form input{
+     border-radius: 5px;
+     border: 1.5px solid rgba(140,70,231,0.7);
+     outline: none;
+     margin: 10px 0px;
+     padding: 5px;
+     width: 50%;
+     font-size: 14px;
+}
+#wrapper form input:focus {
+	border: 1.5px solid #6E37B6;
+}
+#wrapper form label {
+	width: 100%;
+}
+#wrapper form .send{
+	width: 95px;
+	background-color: #8C46E7;
+	margin: 2px;
+	border: none;
+	box-sizing: content-box;
+	color: #fff;
+}
+#wrapper form .sign_up {
+	color: #fff;
+	border: none;
+	width: 95px;
+	background-color: #8C46E7;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 14px;
+	margin: 2px;
+	padding: 5px 16px;
+}
+#wrapper form .send:hover,#wrapper form .sign_up:hover{
+	border: 2px solid #6E37B6;
+	margin: 0px;
+	background-color: #6E37B6;
+}
+#wrapper form #create{
+    width: 150px;
+    margin-left: 36.5px;
+    background-color: #8C46E7;
+	margin: 2px;
+	margin-left: 36.5px;
+	border: none;
+	box-sizing: content-box;
+	color: #fff;
+}
+#wrapper form #create:hover{
+	border: 2px solid #6E37B6;
+	margin: 0px;
+	background-color: #6E37B6;
+	margin-left: 34.5px;
+}
+/*footer*/
+#footer{
+	background-color: rgba(28,22,22,0.9);
+	width: 100%;
+	height: 130px;
+    float: left;
+    border-radius: 10px 10px 0px 0px;
+}
+#footer #signature{
+	width: 140px;
+	margin: 0px auto;
+	color: #fff;
+    margin-top: 85px;
+    font-family: "vodafone" , sans-serif;
+}
+#footer #signature .hp{
+	font-family: "vodafone" , sans-serif;
+}
+#footer #signature .hp img{
+	width: 16px;
+	margin-top: 2px;
+	margin-left: 8px;
+}
+#footer #contacts{
+	color: #fff;
+	width: 95px;
+	padding-top: 5px;
+	float: left;
+}
+#footer #contacts h2, #other h2{
+	font-family: "vodafone", sans-serif;
+	font-size: 16px;
+}
+#footer #contacts hr,#footer #other hr{
+	display: block;
+	height: 0.5px;
+	border: 0;
+	border-top: 0.5px solid #fff; 
+	background-color: #C7C7C7;
+	width: 100%;
+	margin-top: 5px;
+    margin-bottom: 10px;
+}
+.logo_of_contacts {
+	width: 35px;
+	margin-left: 10px;
+}
+#footer #other{
+	float: right;
+	width: 95px;
+	padding-top: 5px;
+	color: #fff;
+}
+.logo_of_other {
+	width: 35px;
+	margin-right: 10px;
+}

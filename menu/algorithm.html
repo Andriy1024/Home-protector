@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Protector</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" href="../fonts/font.css">
+	<link href="../image/icon2.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+ 	<div id="header">
+ 		<div class="logo"><a href="../index.html"  name="logo" title="Головна"><img src="../image/logoweb.png" class="logoimg"></a></div>
+ 		<div id="menu">
+ 			<ul>
+ 			    <li><a href="analiztz.html">Аналіз ТЗ</a>
+                     <ul class="drop1">
+                     	<li><a href="#work_with_the_device">Порядок роботи</a></li>
+                     	<li><a href="#work_with_android">З Android програмою</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="elementbase.html">Елементна база</a>
+                     <ul class="drop1">
+                     	<li><a href="elementbase.html">Arduino</a></li>
+                     	<li><a href="elementbase.html#displa">Дисплей</a></li>
+                     	<li><a href="elementbase.html#keyboard">Клавіатура</a></li>
+                     	<li><a href="elementbase.html#wifi">WI-FI модуль</a></li>
+                     	<li><a href="elementbase.html#rele">Модуль реле</a></li>
+                     	<li><a href="elementbase.html#zumer">Зуммер модуль</a></li>
+                     	<li><a href="elementbase.html#bluetooth">Bluetooth модуль</a></li>
+                     	<li><a href="elementbase.html#functionshema">Функціональна схема</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="android.html">Android програма</a>
+                     <ul class="drop1">
+                     	<li><a href="">Скачати</a></li>
+                     	<li><a href="#appinventor">App Inventor </a></li>
+                     	<li><a href="#androidcode">Код програми</a></li>
+                     </ul>
+ 			    </li>
+ 			    <li><a href="algorithm.html">Алгоритми</a>
+ 			         <ul class="drop1">
+                     	<li><a href="#algorithm_arduino">Алгоритм для Arduino</a></li>
+                     	<li><a href="#blockshema">Блок схема для Arduino</a></li>
+                     	<li><a href="#algorithm_wifi">Алгоритм для WI-FI модуля</a></li>
+                     </ul>
+                </li>
+ 			    <li><a href="addition.html">Додатки</a>
+                     <ul class="drop1">
+                     	<li><a href="addition.html">Програма для Arduinoo</a></li>
+                     	<li><a href="addition.html">Програма для WI-FI модуля</a></li>
+                     </ul>
+ 			    </li>
+ 		    </ul>
+ 	   </div>
+ 	   <div class="right">
+	   <span class="contact"><a href="../sign_up.html" title="Зареєструватися">Реєстрація</a></span>
+	   <span class="contact"><a href="../log_in.html" title="Війти">Вхід</a></span>
+	   </div>
+
+ 	</div>
+    <div id="content">
+        <div id="wrapper">
+            <center><h1>АЛГОРИТМ РОБОТИ СИСТЕМИ</h1></center>
+            <br>
+            <center><h2 id="algorithm_arduino">Алгоритм для Arduino</h2></center>
+            <br>
+            <p>1. Підключення бібліотек .</p>
+            <p>2. Оголошуються та ініціалізуються змінні.</p>
+            <p>3. Ініціалізація портів вводу/виводу.</p>
+            <p>4. Виводиться на LCD дисплей надпис «Please enter pin».</p>
+            <p>5. Перевіряється чи замок не заблокований, якщо заблокований то виконується пункт 6, інакше пункт 7. </p>
+            <p>6. Зчитуються дані з UART доки не прийде символ ‘u’ який розблоковує замок. Після цього виконується пункт 5.</p>
+            <p>7. Починається цикл для введення паролю.<br>Перевірка наявності даних на UART(Bluetooth), якщо дані є вони зчитуються, інакше виконується пункт 8.</p>
+            <p>8. Перевірка наявності даних з клавіатури, якщо дані є вони зчитуються, інакше виконується пункт 9.</p>
+            <p>9. Перевірка наявності даних на UART(Wi-Fi), якщо дані є цикл переривається і здійснюється перехід на пункт 14, інакше виконується пункт 10.</p>
+            <p>10. Після завершення циклу перевірка паролю.<br>Якщо пароль парвильний виконується пункт 11, інакше пункт 12.</p>
+            <p>11. Подається одиничка на 12 і 13 піни, виводиться на дислей:«SUCCESS», Відправляє на UART(Bluetooth) текст «Door has been opened», UART(Wi-Fi) текст «o»,  затримка 1,5 секунди, подається нуль на 13-й пін, затримка 1,5 секунди, подається нуль на 12-й пін, очищення дисплея, виводить на дисплей: «Please enter pin», виконується пункт 7.</p>
+            <p>12. Очищення дисплея, виводиться на дисплей: «WRONG», перевірка чи не ввели неправильний пароль 5-й раз підряд, якщо 5-й раз то виконується пункт 13, інакше затримка 3 секунди, очищення дисплея, виводить на дисплей «Please enter pin», виконується пункт 7.</p>
+            <p>13. Очищення дисплея, виводиться на дисплей «Police», Відправляє на UART(Bluetooth) текст «Door has been blocked», UART(Wi-Fi) текст «b», 3 рази подає на 13 пін одиничку і нуль, блокується замок, виконується пункт 5.</p>
+            <p>14. Перевірка наявності даних на UART(Wi-Fi), якщо дані є вони зчитуються і виконується пункт 15, інакше виконується пункт 7.</p>
+            <p>15. Перевірка умови зчитаних даних.<br>Якщо дані = ‘o’ виконується пункт 11.<br>Інакше якщо дані = ‘w’ виконується пункт 12.<br>Якщо ні одна з умов не виконалася виконується пункт 7.</p>
+            <p id="blockshema">На рисунках 5.1, 5.2, 5.3 зображено блок схема алгоритму  програми для Arduino.</p>
+            <center><img src="../image/alg_1.png" class="img_n2"></center>
+            <center><span class="rysunokn">Рисунок 5.1 -  Блок схема алгоритму  програми для Arduino(Частина 1)</span></center>
+            <center><img src="../image/alg_2.png" class="img_n2"></center>
+            <center><span class="rysunokn">Рисунок 5.2 - Блок схема алгоритму  програми для Arduino(Частина 2)</span></center>
+            <center><img src="../image/alg_3.png" class="img_n2"></center>
+            <center><span class="rysunokn">Рисунок 5.3 - Блок схема алгоритму  програми для Arduino(Частина 3)</span></center>
+            <br>
+            <center><h2 id="algorithm_wifi">Алгоритм для WI-FI модуля</h2></center>
+            <br>
+            <p>1. Підключення бібліотек. </p>
+            <p>2. Оголошення констант.</p>
+            <p>3. Налаштування порту  для роботи з сервером.</p>
+            <p>4. Ініціалізація портів вводу/виводу.</p>
+            <p>5. Підключення до Wi-Fi мережі.</p>
+            <p>6. Запуск сервера .</p>
+            <p>7.  Перевірка чи клієнт підключений </p>
+            <p>8. Очікування наявності даних клієнта.</p>
+            <p>9. Зчитування даних . <br>Перевірка умов: якщо дані = “/un”  то на UART відправляється символ “u” , якщо дані = “/open” то на UART відправляється символ “o”, якщо дані = “/w” то на UART відправляється символ “w”.</p>
+            <p>10.    Перевірка наявності даних на UART, коли дані є вони зчитуються .<br>Перевірка умов: якщо дані = “o” відправляється текст “open” на клієнт. Якщо дані = “b” відправляється текст “Door has been blocked” на клієнт.</p>
+        </div>
+ 	</div>
+ 	<div id="footer">
+ 	    <div id="contacts"><h2>&nbsp;&nbsp;&nbsp;&nbsp;Контакти<hr></h2>
+           <a href="https://www.facebook.com/zubykandriy" target="blank"><img src="../image/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="../image/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a>
+       </div>
+       <div id="other"><h2>&nbsp;&nbsp;&nbsp;&nbsp;Інакше<hr></h2>
+          <a href="http://appinventor.mit.edu/explore/" target="blank"><img src="../image/AppInventorlogo2.png" class="logo_of_other" alt="Appinventor" title="Appinventor"></a>
+           <a href="https://www.arduino.cc/" target="blank"><img src="../image/Arduinoicon2.png" class="logo_of_other" alt="Arduino" title="Arduino"></a>
+       </div>
+       <div id="signature"><p>Зубик Андрій &copy; 2017<br><span class="hp"> <img src="../image/icon2.ico"> Home protector</span></p></div>
+ 	</div>
+ </div>
+</body>
+</html>
