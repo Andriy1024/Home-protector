@@ -243,10 +243,14 @@ body {
 }
 .img_n7{
 	width: 200px;
-	height: 180px;
+	height: 170px;
 }
 .img_n8{
 	width: 200px;
+}
+.img_n9{
+    width: 200px;
+    height: 150px;
 }
 .download {
 	color: #8C46E7;
